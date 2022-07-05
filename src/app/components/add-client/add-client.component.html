@@ -1,0 +1,66 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>Add Client</h2>
+        </div>
+        <div class="row align-items-center">
+            <form #addEmployesForm='ngForm' (ngSubmit)="addEmployes()">
+                <div class="col-md-7">
+
+
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <div class="control-group">
+                            <h2>information client </h2>
+                            <input type="text" class="form-control" [(ngModel)]='employes.name'
+                                [ngModelOptions]="{standalone:true}" placeholder="client Name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='employes.cin'
+                                [ngModelOptions]="{standalone:true}" placeholder="client N° CIN" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='employes.Adress'
+                                [ngModelOptions]="{standalone:true}" placeholder=" client  Adress" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="date" class="form-control" [(ngModel)]='employes.dateDeN'
+                                [ngModelOptions]="{standalone:true}" placeholder=" client  date de N" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='employes.email'
+                                [ngModelOptions]="{standalone:true}" placeholder=" client Email" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="email" class="form-control" [(ngModel)]='employes.tel'
+                                [ngModelOptions]="{standalone:true}" placeholder="client N°Tel" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                      
+
+                        <div>
+                            <button class="btn" type="submit">ADD Client</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

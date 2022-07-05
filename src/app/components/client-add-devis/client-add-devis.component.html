@@ -1,0 +1,82 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>Ajouter devis</h2>
+        </div>
+        <div class="row align-items-center">
+            <form #addClientDevisForm='ngForm' (ngSubmit)="addClientDevis()">
+                <div class="col-md-7">
+
+
+                    <div class="contact-form">
+                        <div id="success"></div>
+
+
+                        <div class="control-group">
+                            <h2>vos informations </h2>
+                            <input type="text" class="form-control" [(ngModel)]='devisClient.clientAdress'
+                                [ngModelOptions]="{standalone:true}" placeholder=" Votre Adress" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='devisClient.clientPays'
+                                [ngModelOptions]="{standalone:true}" placeholder=" Votre Pays" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="email" class="form-control" [(ngModel)]='devisClient.clientTel'
+                                [ngModelOptions]="{standalone:true}" placeholder="Votre N°Tel" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <h2>Ajouter produit </h2>
+                            <h6> --select produit :</h6>
+                            <select class="form-control" [(ngModel)]='devisClient.idProduit'
+                                [ngModelOptions]="{standalone:true}">
+
+                                <option selected *ngFor="let n of product" [ngValue]="n._id">{{n.descriptionProduit}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <h6 style="margin-top: 30px;"> Quantité produit :</h6>
+                            <input type="number" class="form-control" [(ngModel)]='devisClient.qtyProduit'
+                                [ngModelOptions]="{standalone:true}" placeholder="Quantité " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <h2>information Devis </h2>
+                            <label for="">date de devis</label>
+                            <input type="date" class="form-control" [(ngModel)]='devisClient.date'
+                                [ngModelOptions]="{standalone:true}" placeholder="Date" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='devisClient.reference'
+                                [ngModelOptions]="{standalone:true}" placeholder="reference de devis" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+
+                        <div>
+                            <button class="btn" type="submit">Ajouter devis</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

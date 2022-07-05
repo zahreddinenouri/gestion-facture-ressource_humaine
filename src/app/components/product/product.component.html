@@ -1,0 +1,44 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2> Produit</h2>
+        </div>
+        <div class="row align-items-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">description Produit</th>
+                        <th scope="col">Quantité Produit</th>
+                        <th scope="col">prix Produit HT</th>
+                        <th scope="col">TVA Produit</th>
+
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let n of product'>
+                        <th scope="row">{{n.descriptionProduit}}</th>
+                        <td>{{n.qtyProduit}}</td>
+                        <td>{{n.prixHtProduit}}</td>
+                        <td>{{n.tvaProduit}}</td>
+
+                        <td>
+                            <button class="btn btn-info" (click)='goToEditFacture(n._id)'>Modifier</button>
+                            <button class="btn btn-danger" (click)='deleteFacture(n._id)'>supprime</button>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

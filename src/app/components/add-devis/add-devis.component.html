@@ -1,0 +1,90 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>{{title}} devis</h2>
+        </div>
+        <div class="row align-items-center">
+            <form #addDevisForm='ngForm' (ngSubmit)="addEditDevis()">
+                <div class="col-md-7">
+
+
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <div class="control-group">
+                            <h2>information client </h2>
+                            <input type="text" class="form-control" [(ngModel)]='devis.clientName'
+                                [ngModelOptions]="{standalone:true}" placeholder="client Name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='devis.clientEmail'
+                                [ngModelOptions]="{standalone:true}" placeholder="client Email" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='devis.clientAdress'
+                                [ngModelOptions]="{standalone:true}" placeholder=" client client Adress" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='devis.clientPays'
+                                [ngModelOptions]="{standalone:true}" placeholder=" client client Pays" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="email" class="form-control" [(ngModel)]='devis.clientTel'
+                                [ngModelOptions]="{standalone:true}" placeholder="client N°Tel" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <h2>Ajouter produit </h2>
+                            <h6> --select produit :</h6>
+                            <select class="form-control" [(ngModel)]='devis.idProduit'
+                                [ngModelOptions]="{standalone:true}">
+
+                                <option selected *ngFor="let n of product" [ngValue]="n._id">{{n.descriptionProduit}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <h6 style="margin-top: 30px;"> Quantité produit :</h6>
+                            <input type="number" class="form-control" [(ngModel)]='devis.qtyProduit'
+                                [ngModelOptions]="{standalone:true}" placeholder="Quantité " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <h2>information Devis </h2>
+                            <label for="">date de devis</label>
+                            <input type="date" class="form-control" [(ngModel)]='devis.date'
+                                [ngModelOptions]="{standalone:true}" placeholder="Date" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='devis.reference'
+                                [ngModelOptions]="{standalone:true}" placeholder="reference de devis" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+
+                        <div>
+                            <button class="btn" type="submit">{{title}} devis</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,160 @@
+<div class="banner"></div>
+<div class="contact" id="registration">
+    <div class="container">
+        <div class="section-header">
+
+            <h2> fiche salaire</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="invoice-title">
+
+                        <h3 class="pull-right">fiche salaire</h3>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+
+                            <address class="border">
+
+                                <strong> curenet data :</strong> {{curdate}}<br>
+
+                                <strong> name :</strong>{{employer?.name}}<br>
+                                <strong> email:</strong>{{employer?.email}}<br>
+                                <strong> Tel :</strong>{{employer?.tel}}<br>
+                                <strong> Adress:</strong>{{employer?.Adress}}<br>
+                                <strong> Date de N :</strong>{{employer?.dateDeN}}<br>
+                                <strong>type Contrat :</strong>{{employer?.contrat}}<br>
+                                <strong> Qualification :</strong> {{employer?.post}}<br>
+                                <strong> Salaire Par JOur :</strong> {{employer?.SalaireParJ}}<br>
+                                <strong> Nbr du jour par mois :</strong> {{employer?.jourDuMois}}<br>
+                            </address>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Order summary</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <td><strong>Rubrique</strong></td>
+                                            <td class="text-center"><strong>Conge Non Payer</strong></td>
+                                            <td class="text-center"><strong>Conge Payer</strong></td>
+
+                                            <td class="text-center"><strong>Base</strong></td>
+                                            <td class="text-center"><strong>Taux </strong></td>
+                                            <td class="thick-line"></td>
+                                            <td class="text-right"><strong>Gain</strong></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        <tr>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line text-center">{{total2}}</td>
+                                            <td class="thick-line text-center">{{total}}</td>
+                                            <td class="thick-line text-center">{{employer?.jourDuMois-total2}}
+                                            </td>
+                                            <td class="thick-line text-center">
+                                                {{employer?.SalaireParJ}}$
+                                            </td>
+                                            <td class="thick-line text-right"></td>
+                                            <td class="thick-line text-right">$
+                                                {{(employer?.jourDuMois-total2)*employer?.SalaireParJ}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong></strong></td>
+                                            <td class="no-line text-right"></td>
+                                            <td class="no-line text-right"></td>
+                                            <td class="no-line text-right">
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <!-- <td class="no-line"></td> -->
+                                            <td class="no-line text-center"><strong>jours supplémentaires</strong></td>
+                                            <td class="no-line text-right"></td>
+                                            <td class="no-line text-right">
+                                                {{(conge?.supp)}}
+                                            </td>
+                                            <td class="no-line text-right">
+                                                {{(conge?.supp*employer?.SalaireParJ)}} $
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong>prime</strong></td>
+                                            <td class="no-line text-right"></td>
+                                            <td class="no-line text-right">
+                                                {{(conge?.prime)}} $
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong>Avance</strong></td>
+                                            <td class="no-line text-right"></td>
+                                            <td class="no-line text-right">
+                                                {{conge?.avance}} $
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+
+                                            <td class="no-line text-center"><strong>Net a payer</strong></td>
+                                            <td class="no-line text-right"></td>
+                                            <td class="no-line text-right"></td>
+                                            <td class="no-line text-right">
+                                                {{((employer?.jourDuMois-total2)*employer?.SalaireParJ)-conge?.avance+conge?.prime+(conge?.supp*employer?.SalaireParJ)}}
+                                                $
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <div class=" border2">
+                                    <p><strong>signature</strong></p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <hr>
+    <button class="btn btn-success telecharger" (click)="printPage()">telecharger</button><br><br><br>
+    <hr>
+</div>

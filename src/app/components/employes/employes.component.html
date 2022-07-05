@@ -1,0 +1,54 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>List Employer</h2>
+        </div>
+        <div class="row align-items-center">
+            <table class="table">
+                <thead>
+                    <tr>
+
+                        <th scope="col">employes Name</th>
+                        <!-- <th scope="col">employes CIN</th>
+                        <th scope="col">employes Date De N</th> -->
+                        <th scope="col">employes Email</th>
+                        <th scope="col">employes Tel</th>
+                        <!-- <th scope="col">employes Adress</th>
+                        <th scope="col">employes Type Contrat</th> -->
+                        <th scope="col">employes Post</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let n of employer'>
+                        <th scope="row">{{n.name}}</th>
+                        <!-- <td>{{n.cin}}</td>
+                        <td>{{n.dateDeN}}</td> -->
+                        <td>{{n.email}}</td>
+                        <td>{{n.tel}}</td>
+                        <!-- <td>{{n.Adress}}</td>
+                        <td>{{n.contrat}}</td> -->
+                        <td>{{n.post}}</td>
+                        <td>
+
+                            <button class="btn btn-danger p" (click)='deleteEmployer(n._id)'>supprimer employer</button>
+                            <button class="btn btn-success  p" (click)='goToAddConge(n._id)'>organisé fiche</button>
+                            <button class="btn btn-info p" (click)='displayFiche(n._id)'>voir fiche </button>
+                            <button class="btn btn-warning  p" (click)='displaySalaire(n._id)'>voir Salaire </button>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

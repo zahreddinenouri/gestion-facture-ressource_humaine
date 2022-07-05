@@ -1,0 +1,46 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2> Facture</h2>
+        </div>
+        <div class="row align-items-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">reference</th>
+                        <th scope="col">date</th>
+                        <th scope="col">Nom de produit</th>
+                        <th scope="col">clientName</th>
+                        <th scope="col">clientEmail</th>
+                        <th scope="col">clientTel</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let n of facture'>
+                        <th scope="row">{{n.reference}}</th>
+                        <td>{{n.date}}</td>
+                        <td>{{n.descriptionProduit}}</td>
+                        <td>{{n.clientName}}</td>
+                        <td>{{n.clientEmail}}</td>
+                        <td>{{n.clientTel}}</td>
+                        <td>
+                            <button class="btn btn-info" (click)='goToEditFacture(n._id)'>Edit</button>
+                            <button class="btn btn-danger" (click)='deleteFacture(n._id)'>Delete</button>
+                            <button class="btn btn-success" (click)='displayFacture(n._id)'>display</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

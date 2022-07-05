@@ -1,0 +1,110 @@
+<div class="banner"></div>
+<div class="contact" id="registration">
+    <div class="container">
+        <div class="section-header">
+
+            <h2> devis</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="invoice-title">
+
+                        <h3 class="pull-right">devis Order # {{devis?.reference}}</h3>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+
+                            <address class="border">
+                                <strong>Order Date:</strong><br>
+                                {{devis?.date}}<br><br>
+
+                                <strong>Shipped To:</strong><br>
+                                {{devis?.userFirstName}}<br>
+                                {{devis?.userLastName}}<br>
+                                {{devis?.clientAdress}}<br>
+                                {{devis?.clientPays}}<br>
+                                {{devis?.clientTel}}
+
+                            </address>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Order summary</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <td><strong>description Produit</strong></td>
+
+                                            <td class="text-center"><strong>Quantity</strong></td>
+                                            <td class="text-center"><strong> Price HT</strong></td>
+                                            <td class="thick-line text-right"></td>
+                                            <td class="text-right"><strong>Totals HT</strong></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                        <tr>
+                                            <td>{{devis?.descriptionProduit}}</td>
+                                            <td class="text-center">{{devis?.qtyProduit}}</td>
+
+                                            <td class="text-right">${{devis?.prixHtProduit}}</td>
+                                            <td class="text-right"></td>
+                                            <td class="text-right">${{devis?.prixHtProduit*devis?.cdt}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                                            <td class="thick-line text-right"></td>
+                                            <td class="thick-line text-right">$
+                                                {{devis?.prixHtProduit*devis?.qtyProduit}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong>TVA %</strong></td>
+                                            <td class="no-line text-right">{{devis?.tvaProduit}}%</td>
+                                            <td class="no-line text-right">
+                                                {{(devis?.tvaProduit/100)*devis?.prixHtProduit*devis?.qtyProduit}}$
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong>Total</strong></td>
+                                            <td class="no-line text-right"></td>
+                                            <td class="no-line text-right">
+                                                {{((devis?.tvaProduit/100)*devis?.prixHtProduit*devis?.qtyProduit)+(devis?.prixHtProduit*devis?.qtyProduit)}}$
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <hr>
+    <button class="btn btn-success telecharger" (click)="printPage()">telecharger</button><br><br><br>
+    <hr>
+</div>

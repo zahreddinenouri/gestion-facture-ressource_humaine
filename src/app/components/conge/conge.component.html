@@ -1,0 +1,52 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>List Congé</h2>
+        </div>
+        <div class="row align-items-center">
+            <table class="table">
+                <thead>
+                    <tr>
+
+                        <th scope="col">nom d'employer </th>
+                        <th scope="col">date </th>
+                        <th scope="col">Congé Non Payer </th>
+                        <th scope="col">Congé Payer </th>
+                        <th scope="col">Congé Date debut</th>
+                        <th scope="col">Congé Date fin</th>
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let n of conge'>
+                        <th scope="row">{{n.employerName}}</th>
+                        <td>{{n.curdate}}</td>
+                        <td>{{n.nbrDeJourNonPaye}} J</td>
+                        <td>{{n.nbrDeJour}} J</td>
+                        <td>{{n.from}}</td>
+                        <td>{{n.to}}</td>
+
+
+                        <td>
+
+                            <button class="btn btn-danger" (click)='deleteConge(n._id)'>Delete</button>
+
+
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>organiser bulletin de paie</h2>
+        </div>
+        <div class="row align-items-center">
+            <form #addCongeForm='ngForm' (ngSubmit)="addConge()">
+                <div class="col-md-7">
+
+
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <div class="control-group">
+                            <h2>Nom d'Employer : {{employer?.name}} </h2>
+                            <h5>date actuelle : {{curdate}}</h5>
+                            <h5>organiser les congés {{curdate}}</h5>
+
+                        </div>
+                        <div class="control-group">
+                            <label for="">conge Non payer nbr de jour* :</label>
+                            <input type="number" class="form-control" [(ngModel)]='conge.nbrDeJourNonPaye'
+                                [ngModelOptions]="{standalone:true}" placeholder=" nbr de jour *" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <label for="">conge payer nbr de jour* :</label>
+                            <input type="number" class="form-control" [(ngModel)]='conge.nbrDeJour'
+                                [ngModelOptions]="{standalone:true}" placeholder=" nbr de jour *" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <label for=""> date début congé :</label>
+                            <input type="date" class="form-control" [(ngModel)]='conge.from'
+                                [ngModelOptions]="{standalone:true}" placeholder="conge from" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <label for="">date fin congé :</label>
+                            <input type="date" class="form-control" [(ngModel)]='conge.to'
+                                [ngModelOptions]="{standalone:true}" placeholder=" conge to " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <h5>organiser les avances </h5>
+                            <label for="">Avance :</label>
+                            <input type="number" class="form-control" [(ngModel)]='conge.avance'
+                                [ngModelOptions]="{standalone:true}" placeholder=" Avance* : " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+
+                            <label for="">prime :</label>
+                            <input type="number" class="form-control" [(ngModel)]='conge.prime'
+                                [ngModelOptions]="{standalone:true}" placeholder=" prime* : " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+
+                            <label for="">jours supplémentaires :</label>
+                            <input type="number" class="form-control" [(ngModel)]='conge.supp'
+                                [ngModelOptions]="{standalone:true}" placeholder="Nbr de jours supplémentaires* : " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+
+
+                        <div>
+                            <button class="btn" type="submit">Add Congé</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

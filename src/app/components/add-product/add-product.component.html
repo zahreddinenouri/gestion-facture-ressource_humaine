@@ -1,0 +1,48 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>{{title}} produit</h2>
+        </div>
+        <div class="row align-items-center">
+            <form #addProductForm='ngForm' (ngSubmit)="addEditproduct()">
+                <div class="col-md-7">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <div class="control-group">
+                            <h2>Ajouter produit </h2>
+
+                            <input type="text" class="form-control" [(ngModel)]='produit.descriptionProduit'
+                                [ngModelOptions]="{standalone:true}" placeholder="description Produit" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="number" class="form-control" [(ngModel)]='produit.prixHtProduit'
+                                [ngModelOptions]="{standalone:true}" placeholder="prix hors taxe " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="number" class="form-control" [(ngModel)]='produit.tvaProduit'
+                                [ngModelOptions]="{standalone:true}" placeholder="T V A % " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div>
+                            <button class="btn" type="submit">{{title}} produit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</div>

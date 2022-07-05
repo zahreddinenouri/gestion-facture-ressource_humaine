@@ -1,0 +1,86 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>Add employes</h2>
+        </div>
+        <div class="row align-items-center">
+            <form #addEmployesForm='ngForm' (ngSubmit)="addEmployes()">
+                <div class="col-md-7">
+
+
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <div class="control-group">
+                            <h2>information employes </h2>
+                            <input type="text" class="form-control" [(ngModel)]='employes.name'
+                                [ngModelOptions]="{standalone:true}" placeholder="employes Name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='employes.cin'
+                                [ngModelOptions]="{standalone:true}" placeholder="employes N° CIN" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='employes.Adress'
+                                [ngModelOptions]="{standalone:true}" placeholder=" employes  Adress" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="date" class="form-control" [(ngModel)]='employes.dateDeN'
+                                [ngModelOptions]="{standalone:true}" placeholder=" employes  date de N" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" [(ngModel)]='employes.email'
+                                [ngModelOptions]="{standalone:true}" placeholder=" employes Email" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="email" class="form-control" [(ngModel)]='employes.tel'
+                                [ngModelOptions]="{standalone:true}" placeholder="employes N°Tel" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="email" class="form-control" [(ngModel)]='employes.contrat'
+                                [ngModelOptions]="{standalone:true}" placeholder="employes type Contrat" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="email" class="form-control" [(ngModel)]='employes.post'
+                                [ngModelOptions]="{standalone:true}" placeholder="employes post " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="email" class="form-control" [(ngModel)]='employes.SalaireParJ'
+                                [ngModelOptions]="{standalone:true}" placeholder="employes salaire par jour " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="email" class="form-control" [(ngModel)]='employes.jourDuMois'
+                                [ngModelOptions]="{standalone:true}" placeholder="employes jour Du Mois " />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+
+                        <div>
+                            <button class="btn" type="submit">ADD employes</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2>Login </h2>
+        </div>
+        <div class="row align-items-center">
+
+            <div class="col-md-7">
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form [formGroup]='signinForm'>
+
+                        <div class="control-group">
+                            <input type="email" class="form-control" formControlName='email' placeholder="Your Email" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        
+                        <div class="control-group">
+                            <input type="password" class="form-control" formControlName='pwd' placeholder="password" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div>
+                            <button class="btn" type="submit" (click)="Signin(signinForm.value)">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

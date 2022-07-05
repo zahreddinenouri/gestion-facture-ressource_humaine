@@ -1,0 +1,53 @@
+<div class="banner"></div>
+<div class="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2> salaire</h2>
+        </div>
+        <div class="row align-items-center">
+            <table class="table">
+                <thead>
+                    <tr>
+
+                        <th scope="col">employes Name</th>
+                        <th scope="col">anneé</th>
+                        <th scope="col"> Date De salaire</th>
+                        <th scope="col">salaire par mois</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let n of salaire'>
+                        <th scope="row">{{n.employerName}}</th>
+                        <td>{{n.curYear}}</td>
+                        <td>{{n.curdate}}</td>
+                        <td>{{n.salaire}}$</td>
+
+
+                    </tr>
+                    <tr>
+                        <td class="no-line"></td>
+
+
+
+                        <td class="no-line text-center"><strong>salaire par anneé</strong></td>
+                        <td class="no-line"></td>
+                        <td class="no-line ">
+                            {{total}} $
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>
